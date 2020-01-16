@@ -2,8 +2,7 @@
 const program = require("commander");
 
 program
-  .option("-d, --debug", "output extra debugging")
-  .helpOption('-h, --help', 'read more information')
+  .helpOption("-h, --help", "read more information")
   .option("--base64-hex <string>", "base64 to hex")
   .option("--base64-ascii <string>", "base64 to ascii")
   .option("--base64-utf <string>", "base64 to utf-8")
@@ -18,9 +17,11 @@ program
   .option("--utf-ascii <string>", "utf-8 to ascii");
 
 program.parse(process.argv);
-var myArgs = process.argv.slice(2).join(' ').toString();
+var myArgs = process.argv
+  .slice(2)
+  .join(" ")
+  .toString();
 
-if (program.debug) console.log(program.opts());
 //base64 converter
 if (program.base64Hex)
   console.log(Buffer.from(myArgs, "base64").toString("hex"));
@@ -32,23 +33,19 @@ if (program.base64Utf)
 //hex converter
 if (program.hexBase64)
   console.log(Buffer.from(myArgs, "hex").toString("base64"));
-if (program.hexUtf)
-  console.log(Buffer.from(myArgs, "hex").toString("utf-8"));
-if (program.hexAscii)
-  console.log(Buffer.from(myArgs, "hex").toString("ascii"));
+if (program.hexUtf) console.log(Buffer.from(myArgs, "hex").toString("utf-8"));
+if (program.hexAscii) console.log(Buffer.from(myArgs, "hex").toString("ascii"));
 
 //ascii converter
 if (program.asciiBase64)
   console.log(Buffer.from(myArgs, "ascii").toString("base64"));
-if (program.asciiHex)
-  console.log(Buffer.from(myArgs, "ascii").toString("hex"));
+if (program.asciiHex) console.log(Buffer.from(myArgs, "ascii").toString("hex"));
 if (program.asciiUtf)
   console.log(Buffer.from(myArgs, "ascii").toString("utf-8"));
 
 //utf converter
 if (program.utfBase64)
   console.log(Buffer.from(myArgs, "utf-8").toString("base64"));
-if (program.utfHex)
-  console.log(Buffer.from(myArgs, "utf-8").toString("hex"));
+if (program.utfHex) console.log(Buffer.from(myArgs, "utf-8").toString("hex"));
 if (program.utfAscii)
-    console.log(Buffer.from(myArgs, "utf-8").toString("ascii"));
+  console.log(Buffer.from(myArgs, "utf-8").toString("ascii"));
