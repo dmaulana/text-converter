@@ -1,0 +1,30 @@
+{
+  "name": "text-converter",
+  "version": "1.0.0",
+  "description": "text parser to multiple format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'OK'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmaulana/text-converter.git"
+  },
+  "keywords": [
+    "text",
+    "converter"
+  ],
+  "author": "Dwira Maulana <abegeh.maulana@gmail.com>",
+  "license": "ISC",
+  "bin": {
+    "convert": "./index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dmaulana/text-converter/issues"
+  },
+  "homepage": "https://github.com/dmaulana/text-converter#readme",
+  "dependencies": {
+    "commander": "^4.1.0"
+  },
+  "devDependencies": {}
+}
